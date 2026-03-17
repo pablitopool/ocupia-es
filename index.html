@@ -11,82 +11,81 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0f0f1a;--bg2:#1a1a2e;--bg3:#16213e;
+  --bg:#0f0f1a;--bg2:#1a1a2e;
   --text:#e8e8f0;--text-dim:#8888aa;--accent:#4fc3f7;
-  --green:hsl(120,60%,38%);--yellow:hsl(55,80%,50%);--red:hsl(0,65%,42%);
   --radius:6px;
 }
 html,body{height:100%;overflow:hidden}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg);color:var(--text);display:flex;flex-direction:column;
-}
-#header{
-  padding:12px 20px 8px;background:var(--bg2);border-bottom:1px solid #2a2a4e;
-  flex-shrink:0;
-}
-#header h1{font-size:1.3rem;font-weight:700;letter-spacing:-.5px}
-#header .sub{font-size:.78rem;color:var(--text-dim);margin-top:2px}
-#controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
-.layer-btn{
-  padding:6px 16px;border:1px solid #3a3a5e;border-radius:var(--radius);
-  background:var(--bg);color:var(--text-dim);cursor:pointer;font-size:.8rem;
-  transition:all .15s;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column}
+#header{padding:10px 20px 8px;background:var(--bg2);border-bottom:1px solid #2a2a4e;flex-shrink:0}
+#header h1{font-size:1.25rem;font-weight:700;letter-spacing:-.5px}
+#header .sub{font-size:.75rem;color:var(--text-dim);margin-top:2px}
+#controls{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.layer-btn{padding:5px 14px;border:1px solid #3a3a5e;border-radius:var(--radius);background:var(--bg);color:var(--text-dim);cursor:pointer;font-size:.78rem;transition:all .15s}
 .layer-btn:hover{border-color:var(--accent);color:var(--text)}
 .layer-btn.active{background:var(--accent);color:#0f0f1a;border-color:var(--accent);font-weight:600}
-#layer-desc{font-size:.72rem;color:var(--text-dim);margin-left:8px;max-width:480px}
+#layer-desc{font-size:.7rem;color:var(--text-dim);margin-left:6px;max-width:400px}
+#info-btn{margin-left:auto;background:none;border:1px solid #3a3a5e;border-radius:50%;width:24px;height:24px;cursor:pointer;color:var(--text-dim);font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+#info-btn:hover{border-color:var(--accent);color:var(--accent)}
+/* Stats bar */
+#statsbar{background:var(--bg2);border-bottom:1px solid #2a2a4e;display:flex;overflow-x:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:#2a2a4e transparent}
+#statsbar::-webkit-scrollbar{height:3px}
+#statsbar::-webkit-scrollbar-thumb{background:#2a2a4e}
+.sb-block{padding:7px 12px;border-right:1px solid #1e1e3a;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start}
+.sb-block:last-child{border-right:none}
+.sb-lbl{font-size:.56rem;font-weight:700;letter-spacing:.07em;color:var(--text-dim);text-transform:uppercase;margin-bottom:3px;white-space:nowrap}
+.sb-big{font-size:1.7rem;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--text)}
+.sb-big.green{color:hsl(120,60%,45%)}.sb-big.yellow{color:hsl(55,85%,58%)}.sb-big.orange{color:hsl(30,90%,58%)}.sb-big.red{color:hsl(0,68%,55%)}
+.sb-sub{font-size:.6rem;color:var(--text-dim);margin-top:2px;white-space:nowrap}
+.sb-tier{display:flex;align-items:center;gap:4px;margin-bottom:2px;font-size:.62rem;white-space:nowrap}
+.sb-tier-dot{width:7px;height:7px;border-radius:1px;flex-shrink:0}
+.sb-tier-lbl{flex:1;color:var(--text);min-width:90px}
+.sb-tier-jobs{color:var(--text);font-weight:600;width:38px;text-align:right}
+.sb-tier-pct{color:var(--text-dim);width:26px;text-align:right}
+.sb-cross{display:flex;align-items:center;gap:5px;margin-bottom:2px;font-size:.61rem;white-space:nowrap}
+.sb-cross-lbl{width:60px;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis}
+.sb-cross-bar{width:55px;height:5px;background:#1a1a30;border-radius:2px;overflow:hidden;flex-shrink:0}
+.sb-cross-bar-inner{height:100%;border-radius:2px}
+.sb-cross-val{width:50px;text-align:right;color:var(--text);font-weight:600}
+.sb-histogram{display:flex;align-items:flex-end;gap:2px;height:50px;margin-top:2px}
+.sb-hbar{flex:1;min-width:10px;border-radius:2px 2px 0 0}
+/* Main */
 #main{flex:1;display:flex;overflow:hidden;min-height:0}
 #treemap-wrap{flex:1;position:relative;min-width:0}
 #treemap{display:block;width:100%;height:100%;cursor:pointer}
-#tooltip{
-  position:fixed;pointer-events:none;z-index:100;display:none;
-  background:rgba(15,15,26,.94);border:1px solid #3a3a5e;border-radius:var(--radius);
-  padding:10px 14px;font-size:.75rem;line-height:1.5;max-width:340px;
-  box-shadow:0 4px 20px rgba(0,0,0,.5);
-}
+/* Tooltip */
+#tooltip{position:fixed;pointer-events:none;z-index:100;display:none;background:rgba(15,15,26,.96);border:1px solid #3a3a5e;border-radius:var(--radius);padding:10px 14px;font-size:.75rem;line-height:1.5;max-width:340px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
 #tooltip .tt-title{font-weight:700;font-size:.85rem;color:var(--accent);margin-bottom:4px}
 #tooltip .tt-cat{color:var(--text-dim);font-size:.68rem;margin-bottom:6px}
 #tooltip .tt-row{display:flex;justify-content:space-between;gap:16px}
 #tooltip .tt-label{color:var(--text-dim)}
 #tooltip .tt-val{font-weight:600}
 #tooltip .tt-rationale{margin-top:6px;font-style:italic;color:var(--text-dim);font-size:.68rem;border-top:1px solid #2a2a4e;padding-top:6px}
-#sidebar{
-  width:260px;background:var(--bg2);border-left:1px solid #2a2a4e;
-  padding:14px;overflow-y:auto;flex-shrink:0;font-size:.73rem;
-}
-#sidebar h3{font-size:.82rem;margin-bottom:10px;color:var(--accent)}
-.stat-row{display:flex;justify-content:space-between;margin-bottom:6px}
-.stat-label{color:var(--text-dim)}
-.stat-val{font-weight:600}
-.dist-bar-wrap{margin-bottom:4px}
-.dist-bar-label{font-size:.65rem;color:var(--text-dim);margin-bottom:1px}
-.dist-bar-outer{height:14px;background:#1a1a30;border-radius:3px;overflow:hidden}
-.dist-bar-inner{height:100%;border-radius:3px;transition:width .3s}
-.dist-bar-pct{font-size:.6rem;color:var(--text-dim);float:right;margin-top:-13px;margin-right:3px;position:relative}
-#footer{
-  padding:6px 20px;background:var(--bg2);border-top:1px solid #2a2a4e;
-  font-size:.65rem;color:var(--text-dim);flex-shrink:0;
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;
-}
-#footer a{color:var(--accent);text-decoration:none}
-#footer a:hover{text-decoration:underline}
-#loading{
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  background:var(--bg);display:flex;align-items:center;justify-content:center;
-  flex-direction:column;z-index:200;
-}
-#loading .spinner{
-  width:40px;height:40px;border:3px solid #2a2a4e;border-top-color:var(--accent);
-  border-radius:50%;animation:spin 1s linear infinite;
-}
+/* Footer */
+#footer{padding:5px 20px;background:var(--bg2);border-top:1px solid #2a2a4e;font-size:.63rem;color:var(--text-dim);flex-shrink:0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+#footer a,#footer .ft-link{color:var(--accent);text-decoration:none;background:none;border:none;cursor:pointer;font-size:.63rem;padding:0;font-family:inherit}
+#footer a:hover,#footer .ft-link:hover{text-decoration:underline}
+/* Loading */
+#loading{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:200}
+#loading .spinner{width:40px;height:40px;border:3px solid #2a2a4e;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 #loading p{margin-top:14px;color:var(--text-dim);font-size:.85rem}
-#error-msg{display:none;padding:40px;text-align:center;color:var(--red)}
+#error-msg{display:none;padding:40px;text-align:center;color:hsl(0,65%,42%)}
+/* Modal */
+#modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:300;align-items:center;justify-content:center;padding:20px}
+#modal-overlay.open{display:flex}
+#modal-box{background:var(--bg2);border:1px solid #3a3a5e;border-radius:10px;max-width:680px;width:100%;max-height:82vh;overflow-y:auto;padding:24px 28px;position:relative;font-size:.8rem;line-height:1.65}
+#modal-box h2{font-size:1.05rem;margin-bottom:12px;color:var(--accent)}
+#modal-box h3{font-size:.85rem;margin:14px 0 6px;color:var(--text)}
+#modal-box p{color:var(--text-dim);margin-bottom:8px}
+#modal-box .modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-dim);font-size:1.3rem;cursor:pointer;line-height:1}
+#modal-box .modal-close:hover{color:var(--text)}
+#modal-box .caveat{background:rgba(255,255,255,.04);border-left:3px solid #3a3a5e;padding:10px 14px;border-radius:0 4px 4px 0;margin-top:10px}
+/* Responsive */
 @media(max-width:768px){
-  #sidebar{display:none}
-  #header h1{font-size:1.1rem}
-  .layer-btn{padding:5px 10px;font-size:.72rem}
+  #statsbar{display:none}
+  #header h1{font-size:1.05rem}
+  .layer-btn{padding:4px 10px;font-size:.7rem}
   #layer-desc{display:none}
 }
 </style>
@@ -104,18 +103,16 @@ body{
     <button class="layer-btn" data-layer="education">Formaci&oacute;n</button>
     <button class="layer-btn" data-layer="exposure">Exposici&oacute;n IA</button>
     <span id="layer-desc"></span>
+    <button id="info-btn" title="Sobre este proyecto">&#x2139;</button>
   </div>
 </div>
+
+<div id="statsbar"></div>
 
 <div id="main">
   <div id="treemap-wrap">
     <canvas id="treemap"></canvas>
     <div id="error-msg"></div>
-  </div>
-  <div id="sidebar">
-    <h3 id="stats-title">Estad&iacute;sticas</h3>
-    <div id="stats-summary"></div>
-    <div id="stats-dist" style="margin-top:12px"></div>
   </div>
 </div>
 
@@ -132,486 +129,453 @@ body{
 
 <div id="footer">
   <span>Datos: <a href="https://www.ine.es" target="_blank" rel="noopener">INE</a> (EPA, EAES) &middot; Generado: <span id="ft-date"></span></span>
-  <span>Inspirado en <a href="https://karpathy.ai/jobs/" target="_blank" rel="noopener">karpathy.ai/jobs</a></span>
+  <span>Inspirado en <a href="https://karpathy.ai/jobs/" target="_blank" rel="noopener">karpathy.ai/jobs</a> &middot; <button class="ft-link" id="about-link">Sobre este proyecto</button></span>
+</div>
+
+<div id="modal-overlay">
+  <div id="modal-box">
+    <button class="modal-close" id="modal-close-btn">&times;</button>
+    <h2>OcupIA &mdash; Mercado Laboral Espa&ntilde;ol</h2>
+    <p>Esta herramienta visualiza 54 grupos de ocupaci&oacute;n de la <strong>Clasificaci&oacute;n Nacional de Ocupaciones (CNO-11)</strong>, cubriendo 22,1 millones de empleados seg&uacute;n los datos m&aacute;s recientes del INE. El &aacute;rea de cada rect&aacute;ngulo es proporcional al n&uacute;mero de empleados. El color muestra la m&eacute;trica seleccionada: alterna entre perspectiva de crecimiento (EPA), salario medio bruto (EAES), nivel de formaci&oacute;n requerido y exposici&oacute;n a la inteligencia artificial. Haz clic en cualquier tile para consultar su ficha en el INE.</p>
+    <p style="color:#6666aa;font-style:italic">Esto no es un informe ni una publicaci&oacute;n econ&oacute;mica rigurosa &mdash; es una herramienta de exploraci&oacute;n visual del mercado laboral espa&ntilde;ol.</p>
+    <h3>Coloreado con IA</h3>
+    <p>El c&oacute;digo fuente incluye scrapers, parsers y un <strong>pipeline en Python</strong> que conecta con la Claude API para puntuar ocupaciones con cualquier criterio. Escribes un prompt, el LLM puntua cada ocupaci&oacute;n, y el treemap colorea en funci&oacute;n del resultado.</p>
+    <p>La capa <em>&ldquo;Exposici&oacute;n IA&rdquo;</em> estima cu&aacute;nto transformar&aacute; la IA actual a cada ocupaci&oacute;n. El mismo pipeline puede responder otras preguntas &mdash; exposici&oacute;n a rob&oacute;tica humanoide, riesgo de deslocalizaci&oacute;n, impacto clim&aacute;tico &mdash; cambiando el prompt y re-ejecutando.</p>
+    <div class="caveat">
+      <h3 style="margin-top:0">Aviso sobre las puntuaciones de Exposici&oacute;n IA</h3>
+      <p style="margin-bottom:0">Son estimaciones del modelo, no predicciones rigurosas. Una puntuaci&oacute;n alta no implica que el empleo vaya a desaparecer. Los desarrolladores de software puntuan 9/10 porque la IA est&aacute; transformando su trabajo &mdash; pero la demanda podr&iacute;a crecer al ser cada desarrollador m&aacute;s productivo. La puntuaci&oacute;n no considera elasticidad de demanda, barreras regulatorias ni preferencias sociales. Muchos empleos de alta exposici&oacute;n ser&aacute;n <em>transformados</em>, no eliminados.</p>
+    </div>
+    <h3>Fuentes</h3>
+    <p>
+      <a href="https://www.ine.es/jaxiT3/Datos.htm?t=65967" target="_blank" rel="noopener">INE &mdash; EPA tabla 65967</a> &middot;
+      <a href="https://www.ine.es/jaxiT3/Datos.htm?t=28186" target="_blank" rel="noopener">INE &mdash; EAES tabla 28186</a> &middot;
+      <a href="https://github.com/pablitopool/ocupia-es" target="_blank" rel="noopener">C&oacute;digo fuente</a>
+    </p>
+  </div>
 </div>
 
 <script>
 "use strict";
 
 /* ── Formatters ── */
-const fmtN = new Intl.NumberFormat("es-ES");
+const fmtN   = new Intl.NumberFormat("es-ES");
 const fmtEUR = new Intl.NumberFormat("es-ES", {style:"currency", currency:"EUR", maximumFractionDigits:0});
-const fmtPct = new Intl.NumberFormat("es-ES", {style:"percent", minimumFractionDigits:1, maximumFractionDigits:1});
 
-/* ── Layer definitions ── */
+/** Escapes a value for safe use in HTML attribute/text content (all dynamic values go through this). */
+function esc(v) {
+  return String(v)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function fmtJobs(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(n >= 10e6 ? 0 : 1).replace(".", ",") + "M";
+  if (n >= 1e3) return Math.round(n / 1e3) + "K";
+  return String(n);
+}
+function fmtWages(n) {
+  if (n >= 1e9) return Math.round(n / 1e9) + " MM\u20ac";
+  if (n >= 1e6) return Math.round(n / 1e6) + " M\u20ac";
+  return fmtN.format(n) + "\u20ac";
+}
+
+/* ── Bucket definitions ── */
+const PAY_BKTS = [
+  {label:"<18k\u20ac",    min:0,     max:18000, midVal:15000},
+  {label:"18\u201325k\u20ac", min:18000, max:25000, midVal:21500},
+  {label:"25\u201335k\u20ac", min:25000, max:35000, midVal:30000},
+  {label:"35\u201350k\u20ac", min:35000, max:50000, midVal:42500},
+  {label:">50k\u20ac",    min:50000, max:1e9,   midVal:57000},
+];
+const EDU_BKTS = [
+  {label:"Sin t\u00edtulo", min:1, max:3, midVal:1.5},
+  {label:"FP/Bach.",         min:3, max:6, midVal:4},
+  {label:"Grado",            min:6, max:7, midVal:6},
+  {label:"M\u00e1ster",     min:7, max:8, midVal:7},
+  {label:"Doctorado",        min:8, max:9, midVal:8},
+];
+const OL_BKTS = [
+  {label:"Descenso (<0%)",   min:-100, max:0,   midVal:-3},
+  {label:"Estable (0\u20132%)",  min:0,    max:2,   midVal:1},
+  {label:"Moderado (2\u20135%)", min:2,    max:5,   midVal:3.5},
+  {label:"Alto (5\u201310%)",    min:5,    max:10,  midVal:7.5},
+  {label:"Muy alto (>10%)",  min:10,   max:100, midVal:12},
+];
+const AI_BKTS = [
+  {label:"M\u00ednima (0\u20131)",   min:0, max:2,  midVal:0.5},
+  {label:"Baja (2\u20133)",          min:2, max:4,  midVal:2.5},
+  {label:"Moderada (4\u20135)",      min:4, max:6,  midVal:4.5},
+  {label:"Alta (6\u20137)",          min:6, max:8,  midVal:6.5},
+  {label:"Muy alta (8\u201310)",     min:8, max:11, midVal:9},
+];
+
+/* ── Layers ── */
 const LAYERS = {
   outlook: {
     title: "Perspectiva de crecimiento",
-    desc: "Variaci\u00f3n interanual del empleo. Verde = crecimiento, rojo = descenso.",
+    desc: "Variaci\u00f3n interanual del empleo. Verde\u202f=\u202fcrecimiento, rojo\u202f=\u202fdescenso.",
     field: "outlook",
     fmt: v => (v >= 0 ? "+" : "") + v.toFixed(1) + "%",
-    color: v => {
-      // -5..+10 range mapped to red..green
-      const t = Math.max(0, Math.min(1, (v + 5) / 15));
-      return lerpColor(t);
-    },
-    statLabel: "Crecimiento medio ponderado"
+    color: v => { const t = Math.max(0, Math.min(1, (v + 5) / 15)); return lerpColor(t); },
   },
   pay: {
     title: "Salario medio anual",
-    desc: "Ganancia media anual bruta. Verde = menor, rojo = mayor (escala logar\u00edtmica).",
+    desc: "Ganancia media anual bruta. Rojo\u202f=\u202fmenor salario, verde\u202f=\u202fmayor.",
     field: "pay",
     fmt: v => fmtEUR.format(v),
     color: v => {
-      // 15000..65000 log scale, inverted (green=low, red=high)
       const logMin = Math.log(15000), logMax = Math.log(65000);
       const t = Math.max(0, Math.min(1, (Math.log(Math.max(v, 15000)) - logMin) / (logMax - logMin)));
-      return lerpColor(1 - t);
+      return lerpColor(t);
     },
-    statLabel: "Salario medio ponderado"
   },
   education: {
     title: "Formaci\u00f3n requerida",
-    desc: "Nivel educativo t\u00edpico. Verde = sin cualificaci\u00f3n, rojo = doctorado.",
+    desc: "Nivel educativo t\u00edpico. Verde\u202f=\u202fsin cualificaci\u00f3n, rojo\u202f=\u202fdoctorado.",
     field: "education_level",
-    fmt: (v, occ) => occ && occ.education ? occ.education : "Nivel " + (typeof v === "number" ? v.toFixed(1) : v),
-    color: v => {
-      const t = Math.max(0, Math.min(1, (v - 1) / 7));
-      return lerpColor(1 - t);
-    },
-    statLabel: "Nivel medio ponderado"
+    fmt: (v, occ) => occ && occ.education ? occ.education : "Nivel " + v,
+    color: v => { const t = Math.max(0, Math.min(1, (v - 1) / 7)); return lerpColor(1 - t); },
   },
   exposure: {
     title: "Exposici\u00f3n a la IA",
-    desc: "Estimaci\u00f3n del impacto de la IA. 0 = sin impacto, 10 = alta transformaci\u00f3n.",
+    desc: "Impacto estimado de la IA. Verde\u202f=\u202fsin impacto, rojo\u202f=\u202falta transformaci\u00f3n.",
     field: "exposure",
-    fmt: v => (typeof v === "number" ? v.toFixed(1) : v) + "/10",
-    color: v => {
-      const t = Math.max(0, Math.min(1, v / 10));
-      return lerpColor(1 - t);
-    },
-    statLabel: "Exposici\u00f3n media ponderada"
-  }
+    fmt: v => v.toFixed(1) + "/10",
+    color: v => { const t = Math.max(0, Math.min(1, v / 10)); return lerpColor(1 - t); },
+  },
 };
 
 function lerpColor(t) {
-  // t: 0=red, 0.5=yellow, 1=green
   let h, s, l;
-  if (t <= 0.5) {
-    const u = t / 0.5;
-    h = 0 + u * 55;
-    s = 65 + u * 15;
-    l = 38 + u * 12;
-  } else {
-    const u = (t - 0.5) / 0.5;
-    h = 55 + u * 65;
-    s = 80 - u * 15;
-    l = 50 - u * 12;
-  }
+  if (t <= 0.5) { const u = t/0.5; h=u*55; s=65+u*15; l=38+u*12; }
+  else          { const u=(t-0.5)/0.5; h=55+u*65; s=80-u*15; l=50-u*12; }
   return `hsl(${h},${s}%,${l}%)`;
 }
-
-function darkenColor(hslStr, amount) {
-  const m = hslStr.match(/hsl\(([^,]+),([^,]+)%,([^)]+)%\)/);
-  if (!m) return hslStr;
-  return `hsl(${m[1]},${m[2]}%,${Math.max(0, parseFloat(m[3]) - amount)}%)`;
+function darkenColor(hsl, amt) {
+  const m = hsl.match(/hsl\(([^,]+),([^,]+)%,([^)]+)%\)/);
+  return m ? `hsl(${m[1]},${m[2]}%,${Math.max(0,parseFloat(m[3])-amt)}%)` : hsl;
 }
 
-/* ── Squarified treemap ── */
+/* ── Treemap ── */
 function squarify(items, rect) {
   if (!items.length) return [];
-  const totalArea = items.reduce((s, i) => s + i._area, 0);
-  if (totalArea <= 0) return items;
-  const scale = (rect.w * rect.h) / totalArea;
-  items.forEach(i => i._scaledArea = i._area * scale);
-  const sorted = [...items].sort((a, b) => b._scaledArea - a._scaledArea);
-  layoutItems(sorted, {x: rect.x, y: rect.y, w: rect.w, h: rect.h});
+  const total = items.reduce((s,i) => s+i._area, 0);
+  if (total <= 0) return items;
+  const scale = (rect.w*rect.h)/total;
+  items.forEach(i => i._scaledArea = i._area*scale);
+  layoutItems([...items].sort((a,b) => b._scaledArea-a._scaledArea), {x:rect.x,y:rect.y,w:rect.w,h:rect.h});
   return items;
 }
-
 function layoutItems(items, rect) {
   if (!items.length) return;
-  if (items.length === 1) {
-    items[0]._rect = {x: rect.x, y: rect.y, w: rect.w, h: rect.h};
-    return;
-  }
+  if (items.length === 1) { items[0]._rect={x:rect.x,y:rect.y,w:rect.w,h:rect.h}; return; }
   const isWide = rect.w >= rect.h;
-  let row = [items[0]];
-  let rowArea = items[0]._scaledArea;
+  let row=[items[0]], rowArea=items[0]._scaledArea;
   const side = isWide ? rect.h : rect.w;
-
-  for (let i = 1; i < items.length; i++) {
-    const newRow = [...row, items[i]];
-    const newArea = rowArea + items[i]._scaledArea;
-    if (worstRatio(row, rowArea, side) >= worstRatio(newRow, newArea, side)) {
-      row = newRow;
-      rowArea = newArea;
-    } else {
-      break;
-    }
+  for (let i=1; i<items.length; i++) {
+    const nr=[...row,items[i]], na=rowArea+items[i]._scaledArea;
+    if (worstRatio(row,rowArea,side) >= worstRatio(nr,na,side)) { row=nr; rowArea=na; } else break;
   }
-
-  // Lay out row
-  const rowLen = rowArea / side;
-  let pos = 0;
+  const rowLen=rowArea/side; let pos=0;
   for (const item of row) {
-    const itemLen = item._scaledArea / rowLen;
-    if (isWide) {
-      item._rect = {x: rect.x, y: rect.y + pos, w: rowLen, h: itemLen};
-    } else {
-      item._rect = {x: rect.x + pos, y: rect.y, w: itemLen, h: rowLen};
-    }
-    pos += itemLen;
+    const il=item._scaledArea/rowLen;
+    item._rect = isWide ? {x:rect.x,y:rect.y+pos,w:rowLen,h:il} : {x:rect.x+pos,y:rect.y,w:il,h:rowLen};
+    pos+=il;
   }
-
-  // Recurse on remaining
-  const remaining = items.slice(row.length);
-  if (remaining.length) {
-    let newRect;
-    if (isWide) {
-      newRect = {x: rect.x + rowLen, y: rect.y, w: rect.w - rowLen, h: rect.h};
-    } else {
-      newRect = {x: rect.x, y: rect.y + rowLen, w: rect.w, h: rect.h - rowLen};
-    }
-    layoutItems(remaining, newRect);
-  }
+  const rest=items.slice(row.length);
+  if (rest.length) layoutItems(rest, isWide
+    ? {x:rect.x+rowLen,y:rect.y,w:rect.w-rowLen,h:rect.h}
+    : {x:rect.x,y:rect.y+rowLen,w:rect.w,h:rect.h-rowLen});
+}
+function worstRatio(row,total,side) {
+  if (!row.length||total<=0||side<=0) return Infinity;
+  const rl=total/side; if (rl<=0) return Infinity;
+  let w=0;
+  for (const i of row) { const il=i._scaledArea/rl; const r=Math.max(rl/il,il/rl); if(r>w)w=r; }
+  return w;
 }
 
-function worstRatio(row, totalArea, side) {
-  if (!row.length || totalArea <= 0 || side <= 0) return Infinity;
-  const rowLen = totalArea / side;
-  if (rowLen <= 0) return Infinity;
-  let worst = 0;
-  for (const item of row) {
-    const itemLen = item._scaledArea / rowLen;
-    const r = Math.max(rowLen / itemLen, itemLen / rowLen);
-    if (r > worst) worst = r;
-  }
-  return worst;
-}
+/* ── State ── */
+let DATA=null, currentLayer="outlook", hoveredOcc=null, tileRects=[];
+const canvas=document.getElementById("treemap");
+const ctx=canvas.getContext("2d");
+const tooltip=document.getElementById("tooltip");
 
-/* ── App state ── */
-let DATA = null;
-let currentLayer = "outlook";
-let hoveredOcc = null;
-let tileRects = []; // {occ, x, y, w, h}
-
-const canvas = document.getElementById("treemap");
-const ctx = canvas.getContext("2d");
-const tooltip = document.getElementById("tooltip");
-
-/* ── Data loading ── */
 async function loadData() {
   try {
     const resp = await fetch("data.json");
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    if (!resp.ok) throw new Error("HTTP " + resp.status);
     DATA = await resp.json();
-    // Filter out occupations with 0 jobs for the treemap
-    DATA.occupations = DATA.occupations.filter(o => o.jobs > 0);
-    DATA.occupations.sort((a, b) => b.jobs - a.jobs);
+    DATA.occupations = DATA.occupations.filter(o => o.jobs > 0).sort((a,b) => b.jobs-a.jobs);
     init();
-  } catch (e) {
+  } catch(e) {
     document.getElementById("loading").style.display = "none";
-    const errEl = document.getElementById("error-msg");
-    errEl.style.display = "block";
-    errEl.innerHTML = `<h2>Error al cargar datos</h2><p>${e.message}</p><p style="margin-top:10px;font-size:.8rem">Aseg&uacute;rate de que <code>data.json</code> est&aacute; en el mismo directorio y sirve los archivos desde un servidor (no file://).</p>`;
+    const el = document.getElementById("error-msg");
+    el.style.display = "block";
+    el.textContent = "Error al cargar datos: " + e.message;
   }
 }
 
 function init() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("subtitle").textContent =
-    `Visualizaci\u00f3n interactiva de ${DATA.occupations.length} ocupaciones \u00b7 ${fmtN.format(DATA.meta.total_employed)} empleados`;
+    DATA.occupations.length + " ocupaciones \u00b7 " + fmtN.format(DATA.meta.total_employed) + " empleados \u00b7 datos INE";
   document.getElementById("ft-date").textContent = DATA.meta.generated || "2026";
 
-  // Layer buttons
-  document.querySelectorAll(".layer-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".layer-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentLayer = btn.dataset.layer;
-      document.getElementById("layer-desc").textContent = LAYERS[currentLayer].desc;
-      render();
-      updateStats();
-    });
-  });
+  document.querySelectorAll(".layer-btn").forEach(btn => btn.addEventListener("click", () => {
+    document.querySelectorAll(".layer-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentLayer = btn.dataset.layer;
+    document.getElementById("layer-desc").textContent = LAYERS[currentLayer].desc;
+    render();
+    buildStatsBar();
+  }));
   document.getElementById("layer-desc").textContent = LAYERS[currentLayer].desc;
+  document.getElementById("info-btn").addEventListener("click", openModal);
+  document.getElementById("about-link").addEventListener("click", openModal);
+  document.getElementById("modal-close-btn").addEventListener("click", closeModal);
+  document.getElementById("modal-overlay").addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
-  // Canvas events
   canvas.addEventListener("mousemove", onMouseMove);
-  canvas.addEventListener("mouseleave", () => { hoveredOcc = null; tooltip.style.display = "none"; render(); });
+  canvas.addEventListener("mouseleave", () => { hoveredOcc=null; tooltip.style.display="none"; render(); });
   canvas.addEventListener("click", onClick);
-
-  // Resize
-  let resizeTimer;
-  window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { render(); }, 100); });
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt=setTimeout(render, 100); });
 
   render();
-  updateStats();
+  buildStatsBar();
 }
 
-/* ── Rendering ── */
+/* ── Render ── */
 function render() {
   const dpr = window.devicePixelRatio || 1;
   const rect = canvas.parentElement.getBoundingClientRect();
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-  canvas.style.width = rect.width + "px";
-  canvas.style.height = rect.height + "px";
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  canvas.width=rect.width*dpr; canvas.height=rect.height*dpr;
+  canvas.style.width=rect.width+"px"; canvas.style.height=rect.height+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.fillStyle="#0f0f1a"; ctx.fillRect(0,0,rect.width,rect.height);
+  if (!DATA||!DATA.occupations.length) return;
 
-  const W = rect.width, H = rect.height;
-  ctx.fillStyle = "#0f0f1a";
-  ctx.fillRect(0, 0, W, H);
-
-  if (!DATA || !DATA.occupations.length) return;
-
-  const layer = LAYERS[currentLayer];
-  const pad = 2;
-
-  // Group by category
-  const cats = {};
-  DATA.occupations.forEach(occ => {
-    const c = occ.category_label;
-    if (!cats[c]) cats[c] = {label: c, items: [], totalJobs: 0};
-    cats[c].items.push(occ);
-    cats[c].totalJobs += occ.jobs;
+  const layer=LAYERS[currentLayer], pad=2;
+  const cats={};
+  DATA.occupations.forEach(o => {
+    if (!cats[o.category_label]) cats[o.category_label]={label:o.category_label,items:[],totalJobs:0};
+    cats[o.category_label].items.push(o);
+    cats[o.category_label].totalJobs+=o.jobs;
   });
-
-  const catArr = Object.values(cats).sort((a, b) => b.totalJobs - a.totalJobs);
-  catArr.forEach(c => c._area = c.totalJobs);
-
-  // Layout categories
-  squarify(catArr, {x: pad, y: pad, w: W - pad * 2, h: H - pad * 2});
-
-  tileRects = [];
+  const catArr=Object.values(cats).sort((a,b)=>b.totalJobs-a.totalJobs);
+  catArr.forEach(c=>c._area=c.totalJobs);
+  squarify(catArr,{x:pad,y:pad,w:rect.width-pad*2,h:rect.height-pad*2});
+  tileRects=[];
 
   for (const cat of catArr) {
     if (!cat._rect) continue;
-    const cr = cat._rect;
-
-    // Category header
-    const headerH = Math.min(18, cr.h * 0.12);
-    ctx.fillStyle = "rgba(255,255,255,0.06)";
-    ctx.fillRect(cr.x, cr.y, cr.w, headerH);
-    ctx.fillStyle = "#8888bb";
-    ctx.font = `600 ${Math.min(11, headerH * 0.7)}px -apple-system,sans-serif`;
-    ctx.textBaseline = "middle";
-    if (cr.w > 60) {
-      ctx.fillText(cat.label, cr.x + 4, cr.y + headerH / 2, cr.w - 8);
-    }
-
-    // Layout items within category
-    const innerRect = {x: cr.x + 1, y: cr.y + headerH + 1, w: cr.w - 2, h: cr.h - headerH - 2};
-    if (innerRect.w <= 0 || innerRect.h <= 0) continue;
-
-    cat.items.forEach(occ => { occ._area = occ.jobs; });
-    squarify(cat.items, innerRect);
+    const cr=cat._rect;
+    const hh=Math.min(18,cr.h*0.12);
+    ctx.fillStyle="rgba(255,255,255,0.06)"; ctx.fillRect(cr.x,cr.y,cr.w,hh);
+    ctx.fillStyle="#8888bb"; ctx.font=`600 ${Math.min(11,hh*0.7)}px -apple-system,sans-serif`; ctx.textBaseline="middle";
+    if (cr.w>60) ctx.fillText(cat.label,cr.x+4,cr.y+hh/2,cr.w-8);
+    const ir={x:cr.x+1,y:cr.y+hh+1,w:cr.w-2,h:cr.h-hh-2};
+    if (ir.w<=0||ir.h<=0) continue;
+    cat.items.forEach(o=>o._area=o.jobs);
+    squarify(cat.items,ir);
 
     for (const occ of cat.items) {
       if (!occ._rect) continue;
-      const r = occ._rect;
-      const val = occ[layer.field];
-      const color = layer.color(val);
-      const isHovered = hoveredOcc === occ;
-
-      // Tile background
-      ctx.fillStyle = isHovered ? darkenColor(color, -10) : color;
-      ctx.fillRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
-
-      // Border
-      ctx.strokeStyle = isHovered ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.4)";
-      ctx.lineWidth = isHovered ? 2 : 0.5;
-      ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
-
-      tileRects.push({occ, x: r.x, y: r.y, w: r.w, h: r.h});
-
-      // Text
-      if (r.w > 30 && r.h > 18) {
-        ctx.fillStyle = "rgba(255,255,255,0.9)";
-        const maxFontSize = Math.min(13, r.w / 8, r.h / 4);
-        const fontSize = Math.max(7, maxFontSize);
-        ctx.font = `600 ${fontSize}px -apple-system,sans-serif`;
-        ctx.textBaseline = "top";
-
-        // Word wrap title
-        const textPad = 3;
-        const maxW = r.w - textPad * 2;
-        const lines = wrapText(occ.title, maxW, ctx);
-        const lineH = fontSize * 1.2;
-        const maxLines = Math.floor((r.h - textPad * 2 - fontSize) / lineH);
-
-        for (let i = 0; i < Math.min(lines.length, Math.max(1, maxLines)); i++) {
-          ctx.fillText(lines[i], r.x + textPad, r.y + textPad + i * lineH, maxW);
-        }
-
-        // Value label
-        if (r.h > 36) {
-          const valStr = layer.fmt(val, occ);
-          ctx.fillStyle = "rgba(255,255,255,0.7)";
-          const valFontSize = Math.max(6, fontSize * 0.8);
-          ctx.font = `400 ${valFontSize}px -apple-system,sans-serif`;
-          const valY = r.y + r.h - textPad - valFontSize;
-          if (valY > r.y + textPad + Math.min(lines.length, maxLines) * lineH) {
-            ctx.fillText(valStr, r.x + textPad, valY, maxW);
-          }
+      const r=occ._rect, val=occ[layer.field], color=layer.color(val), hov=hoveredOcc===occ;
+      ctx.fillStyle=hov?darkenColor(color,-10):color; ctx.fillRect(r.x+.5,r.y+.5,r.w-1,r.h-1);
+      ctx.strokeStyle=hov?"rgba(255,255,255,0.6)":"rgba(0,0,0,0.4)"; ctx.lineWidth=hov?2:.5;
+      ctx.strokeRect(r.x+.5,r.y+.5,r.w-1,r.h-1);
+      tileRects.push({occ,x:r.x,y:r.y,w:r.w,h:r.h});
+      if (r.w>30&&r.h>18) {
+        ctx.fillStyle="rgba(255,255,255,0.9)";
+        const fs=Math.max(7,Math.min(13,r.w/8,r.h/4));
+        ctx.font=`600 ${fs}px -apple-system,sans-serif`; ctx.textBaseline="top";
+        const tp=3, mw=r.w-tp*2, lines=wrapText(occ.title,mw,ctx), lh=fs*1.2;
+        const ml=Math.floor((r.h-tp*2-fs)/lh);
+        for (let i=0;i<Math.min(lines.length,Math.max(1,ml));i++) ctx.fillText(lines[i],r.x+tp,r.y+tp+i*lh,mw);
+        if (r.h>36) {
+          const vs=layer.fmt(val,occ); ctx.fillStyle="rgba(255,255,255,0.7)";
+          const vfs=Math.max(6,fs*.8); ctx.font=`400 ${vfs}px -apple-system,sans-serif`;
+          const vy=r.y+r.h-tp-vfs;
+          if (vy>r.y+tp+Math.min(lines.length,ml)*lh) ctx.fillText(vs,r.x+tp,vy,mw);
         }
       }
     }
   }
 }
 
-function wrapText(text, maxWidth, ctx) {
-  const words = text.split(/\s+/);
-  const lines = [];
-  let current = "";
-  for (const word of words) {
-    const test = current ? current + " " + word : word;
-    if (ctx.measureText(test).width > maxWidth && current) {
-      lines.push(current);
-      current = word;
-    } else {
-      current = test;
-    }
+function wrapText(text,maxWidth,ctx) {
+  const words=text.split(/\s+/), lines=[]; let cur="";
+  for (const w of words) {
+    const t=cur?cur+" "+w:w;
+    if (ctx.measureText(t).width>maxWidth&&cur){lines.push(cur);cur=w;}else cur=t;
   }
-  if (current) lines.push(current);
-  return lines;
+  if(cur)lines.push(cur); return lines;
 }
 
 /* ── Interaction ── */
-function getTileAt(mx, my) {
-  // Search in reverse (last drawn = on top)
-  for (let i = tileRects.length - 1; i >= 0; i--) {
-    const t = tileRects[i];
-    if (mx >= t.x && mx <= t.x + t.w && my >= t.y && my <= t.y + t.h) {
-      return t.occ;
-    }
-  }
+function getTileAt(mx,my) {
+  for(let i=tileRects.length-1;i>=0;i--){const t=tileRects[i];if(mx>=t.x&&mx<=t.x+t.w&&my>=t.y&&my<=t.y+t.h)return t.occ;}
   return null;
 }
-
 function onMouseMove(e) {
-  const rect = canvas.getBoundingClientRect();
-  const mx = e.clientX - rect.left;
-  const my = e.clientY - rect.top;
-  const occ = getTileAt(mx, my);
-
-  if (occ !== hoveredOcc) {
-    hoveredOcc = occ;
-    render();
-  }
-
-  if (occ) {
-    tooltip.style.display = "block";
-    tooltip.querySelector(".tt-title").textContent = occ.title;
-    tooltip.querySelector(".tt-cat").textContent = `CNO ${occ.cno_code} \u00b7 ${occ.category_label}`;
-    document.getElementById("tt-jobs").textContent = fmtN.format(occ.jobs);
-    document.getElementById("tt-pay").textContent = fmtEUR.format(occ.pay);
-    document.getElementById("tt-outlook").textContent = (occ.outlook >= 0 ? "+" : "") + occ.outlook.toFixed(1) + "% \u00b7 " + occ.outlook_desc;
-    document.getElementById("tt-edu").textContent = occ.education + ` (nivel ${occ.education_level})`;
-    document.getElementById("tt-ai").textContent = occ.exposure + "/10";
-    document.getElementById("tt-rationale").textContent = occ.exposure_rationale || "";
-
-    // Position tooltip
-    let tx = e.clientX + 14;
-    let ty = e.clientY + 14;
-    const tw = tooltip.offsetWidth;
-    const th = tooltip.offsetHeight;
-    if (tx + tw > window.innerWidth - 10) tx = e.clientX - tw - 10;
-    if (ty + th > window.innerHeight - 10) ty = e.clientY - th - 10;
-    tooltip.style.left = tx + "px";
-    tooltip.style.top = ty + "px";
-  } else {
-    tooltip.style.display = "none";
-  }
+  const r=canvas.getBoundingClientRect(), occ=getTileAt(e.clientX-r.left,e.clientY-r.top);
+  if(occ!==hoveredOcc){hoveredOcc=occ;render();}
+  if(occ){
+    tooltip.style.display="block";
+    tooltip.querySelector(".tt-title").textContent=occ.title;
+    tooltip.querySelector(".tt-cat").textContent="CNO "+occ.cno_code+" \u00b7 "+occ.category_label;
+    document.getElementById("tt-jobs").textContent=fmtN.format(occ.jobs);
+    document.getElementById("tt-pay").textContent=fmtEUR.format(occ.pay);
+    document.getElementById("tt-outlook").textContent=(occ.outlook>=0?"+":"")+occ.outlook.toFixed(1)+"% \u00b7 "+occ.outlook_desc;
+    document.getElementById("tt-edu").textContent=occ.education+" (nivel "+occ.education_level+")";
+    document.getElementById("tt-ai").textContent=occ.exposure+"/10";
+    document.getElementById("tt-rationale").textContent=occ.exposure_rationale||"";
+    let tx=e.clientX+14, ty=e.clientY+14;
+    const tw=tooltip.offsetWidth,th=tooltip.offsetHeight;
+    if(tx+tw>window.innerWidth-10)tx=e.clientX-tw-10;
+    if(ty+th>window.innerHeight-10)ty=e.clientY-th-10;
+    tooltip.style.left=tx+"px"; tooltip.style.top=ty+"px";
+  } else tooltip.style.display="none";
 }
-
 function onClick(e) {
-  const rect = canvas.getBoundingClientRect();
-  const occ = getTileAt(e.clientX - rect.left, e.clientY - rect.top);
-  if (occ && occ.url) window.open(occ.url, "_blank");
+  const r=canvas.getBoundingClientRect(), occ=getTileAt(e.clientX-r.left,e.clientY-r.top);
+  if(occ&&occ.url)window.open(occ.url,"_blank");
 }
 
-/* ── Statistics ── */
-function updateStats() {
-  const layer = LAYERS[currentLayer];
-  const occs = DATA.occupations;
-  const totalJobs = occs.reduce((s, o) => s + o.jobs, 0);
+/* ── Stats bar ── */
+function wAvg(occs,field){const tj=occs.reduce((s,o)=>s+o.jobs,0);return tj>0?occs.reduce((s,o)=>s+o[field]*o.jobs,0)/tj:0;}
 
-  // Weighted average
-  let weightedSum = 0;
-  occs.forEach(o => { weightedSum += o[layer.field] * o.jobs; });
-  const weightedAvg = totalJobs > 0 ? weightedSum / totalJobs : 0;
+function getBucketJobs(occs,field,buckets) {
+  const total=occs.reduce((s,o)=>s+o.jobs,0);
+  return buckets.map(b=>{
+    const jobs=occs.filter(o=>o[field]>=b.min&&o[field]<b.max).reduce((s,o)=>s+o.jobs,0);
+    return {...b,jobs,pct:total>0?jobs/total*100:0};
+  });
+}
+function getAvgByBucket(occs,bucketField,buckets,avgField) {
+  return buckets.map(b=>{
+    const items=occs.filter(o=>o[bucketField]>=b.min&&o[bucketField]<b.max);
+    const tj=items.reduce((s,o)=>s+o.jobs,0);
+    return {label:b.label,avg:tj>0?items.reduce((s,o)=>s+o[avgField]*o.jobs,0)/tj:null,jobs:tj};
+  }).filter(r=>r.avg!==null&&r.jobs>0);
+}
 
-  const vals = occs.map(o => o[layer.field]).sort((a, b) => a - b);
-  const minVal = vals[0];
-  const maxVal = vals[vals.length - 1];
-  const medianVal = vals[Math.floor(vals.length / 2)];
+/* Build HTML using safe string composition — all dynamic values escaped via esc() */
+function mkHistogram(buckets,colorFn) {
+  const maxJ=Math.max(...buckets.map(b=>b.jobs),1);
+  const bars=buckets.map(b=>{
+    const h=Math.max(3,Math.round(b.jobs/maxJ*46));
+    return '<div class="sb-hbar" style="height:'+h+'px;background:'+colorFn(b.midVal)+'" title="'+esc(b.label)+': '+esc(fmtJobs(b.jobs))+'"></div>';
+  }).join("");
+  return '<div class="sb-histogram">'+bars+'</div>';
+}
+function mkTierRows(buckets,totalJobs,colorFn) {
+  return buckets.map(b=>{
+    const pct=totalJobs>0?b.jobs/totalJobs*100:0;
+    return '<div class="sb-tier">'
+      +'<div class="sb-tier-dot" style="background:'+colorFn(b.midVal)+'"></div>'
+      +'<span class="sb-tier-lbl">'+esc(b.label)+'</span>'
+      +'<span class="sb-tier-jobs">'+esc(fmtJobs(b.jobs))+'</span>'
+      +'<span class="sb-tier-pct">'+Math.round(pct)+'%</span>'
+      +'</div>';
+  }).join("");
+}
+function mkCrossTab(rows,valFmt,colorFn) {
+  const maxAbs=Math.max(...rows.map(r=>Math.abs(r.avg)),0.001);
+  return rows.map(r=>{
+    const pct=Math.abs(r.avg)/maxAbs*100;
+    return '<div class="sb-cross">'
+      +'<span class="sb-cross-lbl">'+esc(r.label)+'</span>'
+      +'<div class="sb-cross-bar"><div class="sb-cross-bar-inner" style="width:'+pct.toFixed(0)+'%;background:'+colorFn(r.avg)+'"></div></div>'
+      +'<span class="sb-cross-val">'+esc(valFmt(r.avg))+'</span>'
+      +'</div>';
+  }).join("");
+}
+function mkBlock(label,content) {
+  return '<div class="sb-block"><div class="sb-lbl">'+label+'</div>'+content+'</div>';
+}
+function mkBig(val,cls,sub) {
+  return '<div class="sb-big '+cls+'">'+esc(val)+'</div><div class="sb-sub">'+esc(sub)+'</div>';
+}
 
-  let summaryHTML = "";
-  summaryHTML += `<div class="stat-row"><span class="stat-label">${layer.statLabel}</span><span class="stat-val">${layer.fmt(weightedAvg, {education:"—"})}</span></div>`;
-  summaryHTML += `<div class="stat-row"><span class="stat-label">Mediana</span><span class="stat-val">${layer.fmt(medianVal, {education:"—"})}</span></div>`;
-  summaryHTML += `<div class="stat-row"><span class="stat-label">Rango</span><span class="stat-val">${layer.fmt(minVal, {education:"—"})} \u2013 ${layer.fmt(maxVal, {education:"—"})}</span></div>`;
-  summaryHTML += `<div class="stat-row"><span class="stat-label">Ocupaciones</span><span class="stat-val">${occs.length}</span></div>`;
-  summaryHTML += `<div class="stat-row"><span class="stat-label">Empleados</span><span class="stat-val">${fmtN.format(totalJobs)}</span></div>`;
-  document.getElementById("stats-summary").innerHTML = summaryHTML;
-  document.getElementById("stats-title").textContent = layer.title;
+function buildStatsBar() {
+  if (!DATA) return;
+  const occs=DATA.occupations, tj=occs.reduce((s,o)=>s+o.jobs,0);
+  const olC=v=>LAYERS.outlook.color(v), payC=v=>LAYERS.pay.color(v), aiC=v=>LAYERS.exposure.color(v);
 
-  // Distribution
-  let distHTML = "<h3 style='font-size:.78rem;margin-bottom:8px;color:var(--text-dim)'>Distribuci\u00f3n por empleo</h3>";
-  const bins = getBins(currentLayer);
+  let html = mkBlock("Total empleos", '<div class="sb-big">'+esc(fmtJobs(tj))+'</div>');
 
-  for (const bin of bins) {
-    let binJobs = 0;
-    occs.forEach(o => {
-      const v = o[layer.field];
-      if (v >= bin.min && v < bin.max) binJobs += o.jobs;
-    });
-    const pct = totalJobs > 0 ? (binJobs / totalJobs * 100) : 0;
-    const color = layer.color((bin.min + bin.max) / 2);
-    distHTML += `<div class="dist-bar-wrap">`;
-    distHTML += `<div class="dist-bar-label">${bin.label}</div>`;
-    distHTML += `<div class="dist-bar-outer"><div class="dist-bar-inner" style="width:${Math.max(1, pct)}%;background:${color}"></div></div>`;
-    distHTML += `<div class="dist-bar-pct">${pct.toFixed(1)}%</div>`;
-    distHTML += `</div>`;
+  if (currentLayer==="outlook") {
+    const avg=wAvg(occs,"outlook");
+    const bkts=getBucketJobs(occs,"outlook",OL_BKTS);
+    const byPay=getAvgByBucket(occs,"pay",PAY_BKTS,"outlook");
+    const byEdu=getAvgByBucket(occs,"education_level",EDU_BKTS,"outlook");
+    const decl=occs.filter(o=>o.outlook<0).reduce((s,o)=>s+o.jobs,0);
+    const grow=occs.filter(o=>o.outlook>0).reduce((s,o)=>s+o.jobs,0);
+    const cls=avg>=5?"green":avg>=0?"yellow":"red";
+    html+=mkBlock("Perspectiva media", mkBig((avg>=0?"+":"")+avg.toFixed(1)+"%",cls,"ponderada por empleo"));
+    html+=mkBlock("Empleo por perspectiva", mkHistogram(bkts,olC));
+    html+=mkBlock("Tramos de perspectiva", mkTierRows(bkts,tj,olC));
+    html+=mkBlock("Perspectiva por salario", mkCrossTab(byPay,v=>(v>=0?"+":"")+v.toFixed(1)+"%",olC));
+    html+=mkBlock("Perspectiva por formaci\u00f3n", mkCrossTab(byEdu,v=>(v>=0?"+":"")+v.toFixed(1)+"%",olC));
+    html+=mkBlock("Empleos en descenso", mkBig(fmtJobs(decl),"red","perspectiva negativa"));
+    html+=mkBlock("Empleos en crecimiento", mkBig(fmtJobs(grow),"green","perspectiva positiva"));
+
+  } else if (currentLayer==="pay") {
+    const avg=wAvg(occs,"pay");
+    const bkts=getBucketJobs(occs,"pay",PAY_BKTS);
+    const byEdu=getAvgByBucket(occs,"education_level",EDU_BKTS,"pay");
+    const byOl=getAvgByBucket(occs,"outlook",OL_BKTS,"pay");
+    const totalW=occs.reduce((s,o)=>s+o.pay*o.jobs,0);
+    html+=mkBlock("Salario medio", mkBig(fmtEUR.format(Math.round(avg)),"orange","ponderado por empleo"));
+    html+=mkBlock("Empleo por salario", mkHistogram(bkts,payC));
+    html+=mkBlock("Tramos salariales", mkTierRows(bkts,tj,payC));
+    html+=mkBlock("Salario por formaci\u00f3n", mkCrossTab(byEdu,v=>fmtEUR.format(Math.round(v)),v=>payC(v)));
+    html+=mkBlock("Salario por perspectiva", mkCrossTab(byOl,v=>fmtEUR.format(Math.round(v)),v=>payC(v)));
+    html+=mkBlock("Masa salarial total", mkBig(fmtWages(totalW),"orange","anual"));
+
+  } else if (currentLayer==="education") {
+    const bkts=getBucketJobs(occs,"education_level",EDU_BKTS);
+    const byPay=getAvgByBucket(occs,"education_level",EDU_BKTS,"pay");
+    const byOl=getAvgByBucket(occs,"education_level",EDU_BKTS,"outlook");
+    const gradoJ=occs.filter(o=>o.education_level>=6).reduce((s,o)=>s+o.jobs,0);
+    const sinTit=occs.filter(o=>o.education_level<=2).reduce((s,o)=>s+o.jobs,0);
+    html+=mkBlock("Grado univ. o m\u00e1s", mkBig((tj>0?gradoJ/tj*100:0).toFixed(0)+"%","green","del total de empleos"));
+    html+=mkBlock("Empleo por formaci\u00f3n", mkHistogram(bkts,v=>LAYERS.education.color(v)));
+    html+=mkBlock("Niveles educativos", mkTierRows(bkts,tj,v=>LAYERS.education.color(v)));
+    html+=mkBlock("Salario por nivel", mkCrossTab(byPay,v=>fmtEUR.format(Math.round(v)),v=>payC(v)));
+    html+=mkBlock("Perspectiva por nivel", mkCrossTab(byOl,v=>(v>=0?"+":"")+v.toFixed(1)+"%",v=>olC(v)));
+    html+=mkBlock("Sin cualificaci\u00f3n formal", mkBig(fmtJobs(sinTit),"orange","nivel ESO o inferior"));
+
+  } else if (currentLayer==="exposure") {
+    const avg=wAvg(occs,"exposure");
+    const bkts=getBucketJobs(occs,"exposure",AI_BKTS);
+    const byPay=getAvgByBucket(occs,"pay",PAY_BKTS,"exposure");
+    const byEdu=getAvgByBucket(occs,"education_level",EDU_BKTS,"exposure");
+    const expW=occs.filter(o=>o.exposure>=7).reduce((s,o)=>s+o.pay*o.jobs,0);
+    html+=mkBlock("Exposici\u00f3n media IA", mkBig(avg.toFixed(1),"yellow","ponderada, escala 0\u201310"));
+    html+=mkBlock("Empleo por exposici\u00f3n", mkHistogram(bkts,aiC));
+    html+=mkBlock("Niveles de exposici\u00f3n", mkTierRows(bkts,tj,aiC));
+    html+=mkBlock("Exposici\u00f3n por salario", mkCrossTab(byPay,v=>v.toFixed(1),aiC));
+    html+=mkBlock("Exposici\u00f3n por formaci\u00f3n", mkCrossTab(byEdu,v=>v.toFixed(1),aiC));
+    html+=mkBlock("Masa salarial expuesta", mkBig(fmtWages(expW),"orange","empleos con exposici\u00f3n \u22657"));
   }
-  document.getElementById("stats-dist").innerHTML = distHTML;
+
+  // All content is generated from our own formatters and hardcoded labels — no user input involved.
+  // Values are escaped via esc() before insertion. Safe to set as innerHTML.
+  document.getElementById("statsbar").innerHTML = html; // safe: all dynamic values sanitized via esc()
 }
 
-function getBins(layerKey) {
-  switch (layerKey) {
-    case "outlook": return [
-      {label: "En descenso (< 0%)", min: -100, max: 0},
-      {label: "Estable (0\u20132%)", min: 0, max: 2},
-      {label: "Moderado (2\u20135%)", min: 2, max: 5},
-      {label: "Alto (5\u201310%)", min: 5, max: 10},
-      {label: "Muy alto (> 10%)", min: 10, max: 100},
-    ];
-    case "pay": return [
-      {label: "< 18.000 \u20ac", min: 0, max: 18000},
-      {label: "18.000\u201325.000 \u20ac", min: 18000, max: 25000},
-      {label: "25.000\u201335.000 \u20ac", min: 25000, max: 35000},
-      {label: "35.000\u201350.000 \u20ac", min: 35000, max: 50000},
-      {label: "> 50.000 \u20ac", min: 50000, max: 999999},
-    ];
-    case "education": return [
-      {label: "Sin cualificaci\u00f3n / ESO", min: 1, max: 3},
-      {label: "FP B\u00e1sica", min: 3, max: 4},
-      {label: "Bachillerato / FP Medio", min: 4, max: 5},
-      {label: "FP Superior", min: 5, max: 6},
-      {label: "Grado / M\u00e1ster / Doctorado", min: 6, max: 9},
-    ];
-    case "exposure": return [
-      {label: "Baja (0\u20132)", min: 0, max: 3},
-      {label: "Media (3\u20135)", min: 3, max: 6},
-      {label: "Alta (6\u20138)", min: 6, max: 9},
-      {label: "Muy alta (9\u201310)", min: 9, max: 11},
-    ];
-    default: return [];
-  }
-}
+/* ── Modal ── */
+function openModal(){document.getElementById("modal-overlay").classList.add("open");}
+function closeModal(){document.getElementById("modal-overlay").classList.remove("open");}
 
-/* ── Init ── */
+/* ── Boot ── */
 loadData();
 </script>
 </body>
