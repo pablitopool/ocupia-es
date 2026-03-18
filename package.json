@@ -1,0 +1,24 @@
+{
+  "name": "ocupia-es",
+  "version": "1.0.0",
+  "description": "Visualizador interactivo del mercado laboral español. Treemap de ~54 ocupaciones (clasificación CNO-11) con cuatro capas de datos: perspectiva de crecimiento, salario medio, nivel de formación requerido y exposición a la inteligencia artificial.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"No tests configured for static HTML project\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablitopool/ocupia-es.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablitopool/ocupia-es/issues"
+  },
+  "homepage": "https://github.com/pablitopool/ocupia-es#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
