@@ -55,7 +55,6 @@ def fetch_epa_data(force: bool = False) -> list:
             else:
                 print("  [ERROR] No se pudo descargar la EPA tras varios intentos.")
                 raise SystemExit(1)
-    return []
 
 
 def parse_quarter(anyo: int, fk_periodo: int) -> str:
