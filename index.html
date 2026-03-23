@@ -60,6 +60,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 #tooltip .tt-row{display:flex;justify-content:space-between;gap:16px}
 #tooltip .tt-label{color:var(--text-dim)}
 #tooltip .tt-val{font-weight:600}
+#tooltip .tt-pay-group{color:#8888bb;font-size:.62rem;margin:-2px 0 2px;font-style:italic}
 #tooltip .tt-rationale{margin-top:6px;font-style:italic;color:var(--text-dim);font-size:.68rem;border-top:1px solid #2a2a4e;padding-top:6px}
 /* Footer */
 #footer{padding:5px 20px;background:var(--bg2);border-top:1px solid #2a2a4e;font-size:.63rem;color:var(--text-dim);flex-shrink:0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
@@ -121,6 +122,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
   <div class="tt-cat"></div>
   <div class="tt-row"><span class="tt-label">Empleo</span><span class="tt-val" id="tt-jobs"></span></div>
   <div class="tt-row"><span class="tt-label">Salario medio</span><span class="tt-val" id="tt-pay"></span></div>
+  <div class="tt-pay-group" id="tt-pay-group"></div>
   <div class="tt-row"><span class="tt-label">Perspectiva</span><span class="tt-val" id="tt-outlook"></span></div>
   <div class="tt-row"><span class="tt-label">Formaci&oacute;n</span><span class="tt-val" id="tt-edu"></span></div>
   <div class="tt-row"><span class="tt-label">Exposici&oacute;n IA</span><span class="tt-val" id="tt-ai"></span></div>
@@ -144,6 +146,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
     <div class="caveat">
       <h3 style="margin-top:0">Aviso sobre las puntuaciones de Exposici&oacute;n IA</h3>
       <p style="margin-bottom:0">Son estimaciones del modelo, no predicciones rigurosas. Una puntuaci&oacute;n alta no implica que el empleo vaya a desaparecer. Los desarrolladores de software puntuan 9/10 porque la IA est&aacute; transformando su trabajo &mdash; pero la demanda podr&iacute;a crecer al ser cada desarrollador m&aacute;s productivo. La puntuaci&oacute;n no considera elasticidad de demanda, barreras regulatorias ni preferencias sociales. Muchos empleos de alta exposici&oacute;n ser&aacute;n <em>transformados</em>, no eliminados.</p>
+    </div>
+    <div class="caveat">
+      <h3 style="margin-top:0">Aviso sobre los datos salariales</h3>
+      <p style="margin-bottom:0">Los salarios provienen de la <strong>Encuesta Anual de Estructura Salarial (EAES)</strong> del INE, que desglosa por 16 subgrupos ocupacionales, no por los 54 grupos CNO-11 que muestra este mapa. Por ello, varias ocupaciones dentro de un mismo subgrupo EAES comparten el mismo salario medio. El tooltip indica a qu&eacute; grupo EAES pertenece cada ocupaci&oacute;n.</p>
     </div>
     <h3>Fuentes</h3>
     <p>
@@ -220,7 +226,7 @@ const LAYERS = {
   },
   pay: {
     title: "Salario medio anual",
-    desc: "Ganancia media anual bruta. Rojo\u202f=\u202fmenor salario, verde\u202f=\u202fmayor.",
+    desc: "Ganancia media anual bruta (EAES, por subgrupo). Rojo\u202f=\u202fmenor, verde\u202f=\u202fmayor.",
     field: "pay",
     fmt: v => fmtEUR.format(v),
     color: v => {
@@ -429,6 +435,7 @@ function onMouseMove(e) {
     tooltip.querySelector(".tt-cat").textContent="CNO "+occ.cno_code+" \u00b7 "+occ.category_label;
     document.getElementById("tt-jobs").textContent=fmtN.format(occ.jobs);
     document.getElementById("tt-pay").textContent=fmtEUR.format(occ.pay);
+    document.getElementById("tt-pay-group").textContent=occ.pay_group?"Grupo EAES: "+occ.pay_group:"";
     document.getElementById("tt-outlook").textContent=(occ.outlook>=0?"+":"")+occ.outlook.toFixed(1)+"% \u00b7 "+occ.outlook_desc;
     document.getElementById("tt-edu").textContent=occ.education+" (nivel "+occ.education_level+")";
     document.getElementById("tt-ai").textContent=occ.exposure+"/10";

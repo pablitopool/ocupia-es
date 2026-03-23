@@ -20,7 +20,8 @@
       "education_level": 7,
       "exposure": 5,
       "exposure_rationale": "La planificación estratégica se apoya cada vez más en IA para análisis predictivo y escenarios, pero el liderazgo político y la toma de decisiones complejas con múltiples stakeholders siguen requiriendo juicio humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Directores y gerentes"
     },
     {
       "title": "Directores de departamentos administrativos y comerciales",
@@ -36,7 +37,8 @@
       "education_level": 7,
       "exposure": 6,
       "exposure_rationale": "La gestión administrativa y comercial se transforma profundamente: dashboards inteligentes, automatización de reporting financiero, CRM predictivo y optimización de procesos con IA generativa.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Directores y gerentes"
     },
     {
       "title": "Directores de producción y operaciones",
@@ -52,7 +54,8 @@
       "education_level": 6,
       "exposure": 5,
       "exposure_rationale": "La IA optimiza cadenas de suministro, planificación de producción y mantenimiento predictivo, pero la gestión de equipos y resolución de incidencias operativas requiere presencia y criterio humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Directores y gerentes"
     },
     {
       "title": "Directores y gerentes de empresas de alojamiento, restauración y comercio",
@@ -68,7 +71,8 @@
       "education_level": 6,
       "exposure": 4,
       "exposure_rationale": "La previsión de demanda y revenue management usan IA, pero la gestión diaria de hostelería y comercio depende de interacción humana, resolución de conflictos y experiencia del cliente.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Directores y gerentes"
     },
     {
       "title": "Directores y gerentes de otras empresas de servicios",
@@ -84,7 +88,8 @@
       "education_level": 6,
       "exposure": 5,
       "exposure_rationale": "La IA asiste en análisis de mercado, pricing dinámico y atención al cliente automatizada, pero la dirección estratégica de servicios requiere relaciones humanas y adaptabilidad.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Directores y gerentes"
     },
     {
       "title": "Profesionales de la salud",
@@ -100,7 +105,8 @@
       "education_level": 7,
       "exposure": 6,
       "exposure_rationale": "La IA transforma el diagnóstico por imagen (radiología, dermatología, patología), el descubrimiento de fármacos y los sistemas de decisión clínica. El cuidado del paciente, la cirugía y la empatía siguen siendo humanos.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Prof. científicos de salud y enseñanza"
     },
     {
       "title": "Profesionales de la enseñanza",
@@ -116,7 +122,8 @@
       "education_level": 6,
       "exposure": 4,
       "exposure_rationale": "Los tutores IA, la corrección automatizada y el aprendizaje personalizado complementan la enseñanza, pero la motivación, el acompañamiento emocional y la gestión del aula son insustituibles.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Prof. científicos de salud y enseñanza"
     },
     {
       "title": "Profesionales de las ciencias físicas, químicas, matemáticas y de las ingenierías",
@@ -132,7 +139,8 @@
       "education_level": 7,
       "exposure": 7,
       "exposure_rationale": "El modelado computacional, la simulación, el diseño asistido (CAD/CAE) y el análisis de datos masivos se potencian enormemente con IA. Las ingenierías de software y datos son las más transformadas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Profesionales de las tecnologías de la información",
@@ -148,7 +156,8 @@
       "education_level": 6,
       "exposure": 9,
       "exposure_rationale": "El desarrollo de software es una de las profesiones más transformadas: generación de código, testing automatizado, DevOps con IA, revisión de código y depuración. La productividad se multiplica pero también cambian las competencias requeridas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Profesionales del derecho",
@@ -164,7 +173,8 @@
       "education_level": 7,
       "exposure": 7,
       "exposure_rationale": "La búsqueda jurisprudencial, revisión de contratos, due diligence, redacción de escritos y análisis de normativa se automatizan significativamente con IA. El litigio y la estrategia legal mantienen componente humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Especialistas en organización de la Administración y de las empresas y en la comercialización",
@@ -180,7 +190,8 @@
       "education_level": 6,
       "exposure": 7,
       "exposure_rationale": "El marketing digital, análisis financiero, business intelligence y gestión empresarial se transforman con IA generativa, analítica predictiva y automatización de campañas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Profesionales de las ciencias sociales",
@@ -196,7 +207,8 @@
       "education_level": 7,
       "exposure": 5,
       "exposure_rationale": "La IA facilita el análisis de datos cualitativos y cuantitativos a gran escala, procesamiento de encuestas y análisis de sentimiento, pero la investigación de campo y la interpretación contextual requieren formación humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Profesionales de la cultura y el espectáculo",
@@ -212,7 +224,8 @@
       "education_level": 6,
       "exposure": 7,
       "exposure_rationale": "La IA generativa produce texto, imagen, música, vídeo y diseño gráfico, impactando directamente en la producción cultural. Los creadores que integran IA multiplican su producción; los que no, pierden competitividad.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Otros prof. científicos e intelectuales"
     },
     {
       "title": "Técnicos de las ciencias y de las ingenierías",
@@ -228,7 +241,8 @@
       "education_level": 5,
       "exposure": 5,
       "exposure_rationale": "El CAD/CAM asistido, mantenimiento predictivo y simulación se benefician de IA, pero la instalación, calibración y trabajo de campo siguen siendo manuales.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Supervisores en ingeniería de minas, de industrias manufactureras y de la construcción",
@@ -244,7 +258,8 @@
       "education_level": 5,
       "exposure": 4,
       "exposure_rationale": "La supervisión requiere presencia física en planta. La IA mejora el control de calidad visual y la planificación, pero la gestión de equipos y seguridad laboral es humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Técnicos sanitarios y profesionales de las terapias alternativas",
@@ -260,7 +275,8 @@
       "education_level": 5,
       "exposure": 5,
       "exposure_rationale": "Los técnicos de imagen médica, laboratorio y farmacia usan IA para diagnóstico asistido y gestión de datos clínicos, pero la interacción con el paciente y los procedimientos manuales persisten.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Profesionales de apoyo en finanzas y matemáticas",
@@ -276,7 +292,8 @@
       "education_level": 6,
       "exposure": 8,
       "exposure_rationale": "El análisis financiero rutinario, la contabilidad analítica, la valoración de riesgos y el compliance son tareas altamente automatizables por IA. Es uno de los perfiles más expuestos del sector servicios.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Representantes, agentes comerciales y afines",
@@ -292,7 +309,8 @@
       "education_level": 5,
       "exposure": 6,
       "exposure_rationale": "La IA transforma la prospección comercial (lead scoring), la personalización de ofertas, los chatbots de venta y el CRM predictivo. La negociación compleja y las relaciones B2B mantienen componente humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Profesionales de apoyo a la gestión administrativa",
@@ -308,7 +326,8 @@
       "education_level": 5,
       "exposure": 7,
       "exposure_rationale": "El procesamiento de documentos, la gestión de agendas, la correspondencia, la tramitación y el archivo son tareas que la IA generativa y la automatización de procesos (RPA) transforman radicalmente.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Técnicos de las tecnologías de la información y las comunicaciones",
@@ -324,7 +343,8 @@
       "education_level": 5,
       "exposure": 7,
       "exposure_rationale": "La administración de sistemas, el soporte técnico de nivel 1-2, la monitorización de redes y la gestión de incidencias se automatizan cada vez más. Los chatbots resuelven tickets rutinarios.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Profesionales de apoyo de servicios jurídicos, sociales, culturales, deportivos y afines",
@@ -340,7 +360,8 @@
       "education_level": 5,
       "exposure": 4,
       "exposure_rationale": "Los servicios sociales, culturales y deportivos requieren empatía, presencia y adaptabilidad cultural. La IA es herramienta de apoyo analítico pero no sustituye el componente relacional.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Técnicos y profesionales de apoyo"
     },
     {
       "title": "Empleados en servicios contables, financieros y de apoyo a la producción y el transporte",
@@ -356,7 +377,8 @@
       "education_level": 4,
       "exposure": 8,
       "exposure_rationale": "La contabilidad operativa, la facturación, la conciliación bancaria y el seguimiento de pedidos son tareas estructuradas y repetitivas, entre las más automatizables por IA y RPA.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Empleados de oficina (sin atención al público)"
     },
     {
       "title": "Empleados de bibliotecas, servicios de correos y afines",
@@ -372,7 +394,8 @@
       "education_level": 4,
       "exposure": 6,
       "exposure_rationale": "La catalogación, clasificación, gestión de fondos documentales y logística postal se automatizan progresivamente. La atención al usuario presencial mantiene cierto componente humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Empleados de oficina (atención al público)"
     },
     {
       "title": "Otros empleados administrativos sin tareas de atención al público",
@@ -388,7 +411,8 @@
       "education_level": 4,
       "exposure": 9,
       "exposure_rationale": "El back-office puro (introducción de datos, archivo, tramitación interna, correspondencia) es el tipo de trabajo cognitivo rutinario con mayor potencial de automatización por IA.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Empleados de oficina (sin atención al público)"
     },
     {
       "title": "Empleados de agencias de viajes, recepcionistas y telefonistas; empleados de ventanilla y afines",
@@ -404,7 +428,8 @@
       "education_level": 4,
       "exposure": 6,
       "exposure_rationale": "Los chatbots, asistentes virtuales, sistemas de reservas online y quioscos autoservicio transforman estos roles, aunque la atención presencial personalizada sigue teniendo demanda.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Empleados de oficina (atención al público)"
     },
     {
       "title": "Trabajadores asalariados de los servicios de restauración",
@@ -420,7 +445,8 @@
       "education_level": 3,
       "exposure": 2,
       "exposure_rationale": "Cocinar, servir, limpiar y atender mesas son tareas físicas en entornos variables y con interacción social directa. La automatización se limita a pedidos y cobros digitales.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Servicios de restauración y comercio"
     },
     {
       "title": "Dependientes en tiendas y almacenes",
@@ -436,7 +462,8 @@
       "education_level": 2,
       "exposure": 4,
       "exposure_rationale": "Las cajas automáticas, sistemas de recomendación, inventario automatizado y comercio online reducen la demanda, pero el asesoramiento en tienda física y la reposición siguen siendo humanos.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Servicios de restauración y comercio"
     },
     {
       "title": "Trabajadores de los servicios de salud y el cuidado de personas",
@@ -452,7 +479,8 @@
       "education_level": 4,
       "exposure": 2,
       "exposure_rationale": "El cuidado de personas mayores, dependientes y enfermos requiere presencia física, empatía y adaptación constante. La IA es solo apoyo en monitorización y gestión de historiales.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Servicios de salud y cuidado de personas"
     },
     {
       "title": "Trabajadores de los servicios de protección y seguridad",
@@ -468,7 +496,8 @@
       "education_level": 4,
       "exposure": 4,
       "exposure_rationale": "La videovigilancia con IA, el reconocimiento facial y la detección de anomalías transforman la vigilancia, pero la intervención física, la escolta y la protección civil siguen siendo humanas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Servicios de protección y seguridad"
     },
     {
       "title": "Otros trabajadores de los servicios personales",
@@ -484,7 +513,8 @@
       "education_level": 3,
       "exposure": 3,
       "exposure_rationale": "Peluquería, estética, cuidado personal y servicios funerarios requieren habilidades manuales, creatividad y trato interpersonal directo que la IA no puede replicar.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Servicios de restauración y comercio"
     },
     {
       "title": "Trabajadores cualificados en actividades agrícolas",
@@ -500,7 +530,8 @@
       "education_level": 3,
       "exposure": 4,
       "exposure_rationale": "La agricultura de precisión (drones, sensores IoT, riego inteligente, análisis satelital) avanza rápidamente, pero la siembra, poda y recolección en muchos cultivos siguen siendo manuales.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Trabajadores agrícolas, ganaderos y pesqueros"
     },
     {
       "title": "Trabajadores cualificados en actividades ganaderas",
@@ -516,7 +547,8 @@
       "education_level": 3,
       "exposure": 3,
       "exposure_rationale": "La monitorización de ganado con sensores y la alimentación automatizada son realidad, pero el manejo animal, la veterinaria de campo y la gestión de pastos requieren presencia humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Trabajadores agrícolas, ganaderos y pesqueros"
     },
     {
       "title": "Trabajadores cualificados en actividades agropecuarias mixtas",
@@ -532,7 +564,8 @@
       "education_level": 3,
       "exposure": 3,
       "exposure_rationale": "Combina las exposiciones de agricultura y ganadería. La IA optimiza la gestión integrada de explotaciones pero el trabajo diario sigue siendo mayormente manual.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Trabajadores agrícolas, ganaderos y pesqueros"
     },
     {
       "title": "Trabajadores cualificados en actividades forestales, pesqueras y cinegéticas",
@@ -548,7 +581,8 @@
       "education_level": 2,
       "exposure": 2,
       "exposure_rationale": "Trabajo en entornos naturales impredecibles (bosques, mar, montaña) con alta variabilidad. La IA apenas tiene aplicación más allá de la cartografía y la gestión de recursos.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Trabajadores agrícolas, ganaderos y pesqueros"
     },
     {
       "title": "Trabajadores en obras estructurales de construcción y afines",
@@ -564,7 +598,8 @@
       "education_level": 3,
       "exposure": 2,
       "exposure_rationale": "La construcción es uno de los sectores menos digitalizados. El trabajo es físico, en exteriores, con materiales pesados y condiciones cambiantes. BIM y drones son apoyo puntual.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de la construcción"
     },
     {
       "title": "Trabajadores de acabado de construcciones e instalaciones; pintores y afines",
@@ -580,7 +615,8 @@
       "education_level": 3,
       "exposure": 2,
       "exposure_rationale": "Los acabados requieren destreza manual fina en espacios variados. Cada obra es diferente. La IA tiene impacto marginal en pintura, fontanería o carpintería de obra.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de la construcción"
     },
     {
       "title": "Soldadores, chapistas, montadores de estructuras metálicas, herreros, elaboradores de herramientas y afines",
@@ -596,7 +632,8 @@
       "education_level": 4,
       "exposure": 4,
       "exposure_rationale": "La soldadura robotizada avanza en entornos de fábrica, pero la soldadura de campo, las reparaciones y el trabajo a medida siguen siendo manuales. La inspección de soldadura por IA es prometedora.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Mecánicos y ajustadores de maquinaria y equipos",
@@ -612,7 +649,8 @@
       "education_level": 4,
       "exposure": 3,
       "exposure_rationale": "El diagnóstico por IA (OBD avanzado, mantenimiento predictivo) mejora la localización de averías, pero la reparación mecánica es manual y requiere experiencia táctil.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Trabajadores especializados en electricidad y electrotecnología",
@@ -628,7 +666,8 @@
       "education_level": 4,
       "exposure": 3,
       "exposure_rationale": "El diseño eléctrico se beneficia de software IA, pero la instalación, cableado y mantenimiento eléctrico son trabajos físicos que requieren presencia y cumplimiento de normativa de seguridad.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Mecánicos de precisión en metales, ceramistas, vidrieros, artesanos y trabajadores de artes gráficas",
@@ -644,7 +683,8 @@
       "education_level": 3,
       "exposure": 2,
       "exposure_rationale": "Los oficios artesanales requieren habilidades manuales únicas, sensibilidad estética y adaptación a materiales. La IA puede asistir en diseño pero no en la ejecución.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Trabajadores de la industria de la alimentación, bebidas y tabaco",
@@ -660,7 +700,8 @@
       "education_level": 3,
       "exposure": 4,
       "exposure_rationale": "La industria alimentaria adopta control de calidad por visión artificial, dosificación automatizada y mantenimiento predictivo. Las líneas de producción son cada vez más automatizadas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Trabajadores de la madera, textil, confección, piel, cuero, calzado y otros operarios en oficios",
@@ -676,7 +717,8 @@
       "education_level": 3,
       "exposure": 3,
       "exposure_rationale": "El corte automatizado por CNC y la costura robótica avanzan en grandes series, pero el trabajo artesanal, las reparaciones y la producción a medida siguen siendo manuales.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Cualificados de industrias manufactureras"
     },
     {
       "title": "Operadores de instalaciones y maquinaria fijas",
@@ -692,7 +734,8 @@
       "education_level": 4,
       "exposure": 5,
       "exposure_rationale": "El control de procesos industriales se automatiza progresivamente con SCADA inteligente y mantenimiento predictivo. El operador evoluciona hacia supervisor de sistemas automatizados.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Operadores de instalaciones y montadores"
     },
     {
       "title": "Montadores y ensambladores en fábricas",
@@ -708,7 +751,8 @@
       "education_level": 3,
       "exposure": 5,
       "exposure_rationale": "La robótica de ensamblaje avanza significativamente (cobots, visión artificial), especialmente en automoción y electrónica. El montaje de componentes pequeños o complejos aún requiere destreza humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Operadores de instalaciones y montadores"
     },
     {
       "title": "Maquinistas de locomotoras, operadores de maquinaria agrícola y de equipos pesados móviles, y marineros",
@@ -724,7 +768,8 @@
       "education_level": 3,
       "exposure": 5,
       "exposure_rationale": "Los vehículos autónomos llegan a maquinaria agrícola y minera. Los trenes automáticos existen. Pero la navegación marítima y la operación en condiciones adversas mantienen al humano.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Conductores y operadores de maquinaria móvil"
     },
     {
       "title": "Conductores de vehículos para el transporte urbano o por carretera",
@@ -740,7 +785,8 @@
       "education_level": 3,
       "exposure": 6,
       "exposure_rationale": "La conducción autónoma es una de las aplicaciones más discutidas de la IA. Los camiones autónomos en autopista y los autobuses sin conductor avanzan, aunque la implantación masiva en España es aún lejana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Conductores y operadores de maquinaria móvil"
     },
     {
       "title": "Empleados domésticos",
@@ -756,7 +802,8 @@
       "education_level": 1,
       "exposure": 1,
       "exposure_rationale": "El trabajo doméstico implica múltiples tareas variadas (cocinar, limpiar, planchar, cuidar) en entornos no estandarizados. Los robots domésticos son aún muy limitados frente a la versatilidad humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "No cualificados en servicios"
     },
     {
       "title": "Otro personal de limpieza",
@@ -772,7 +819,8 @@
       "education_level": 1,
       "exposure": 2,
       "exposure_rationale": "Los robots de limpieza existen para superficies planas, pero la limpieza profesional de oficinas, hospitales y espacios complejos requiere adaptabilidad, acceso a rincones y manejo de productos específicos.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "No cualificados en servicios"
     },
     {
       "title": "Ayudantes de preparación de alimentos",
@@ -788,7 +836,8 @@
       "education_level": 1,
       "exposure": 2,
       "exposure_rationale": "La automatización en cocinas industriales (fast food) avanza con robots que fríen o ensamblan, pero la preparación artesanal, el manejo de ingredientes frescos y la higiene requieren intervención humana.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "No cualificados en servicios"
     },
     {
       "title": "Recogedores de residuos urbanos, vendedores callejeros y otras ocupaciones elementales en servicios",
@@ -804,7 +853,8 @@
       "education_level": 1,
       "exposure": 1,
       "exposure_rationale": "Trabajo en entornos urbanos impredecibles, con residuos variados y condiciones meteorológicas cambiantes. La venta callejera requiere interacción social directa.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "No cualificados en servicios"
     },
     {
       "title": "Peones agrarios, forestales y de la pesca",
@@ -820,7 +870,8 @@
       "education_level": 2,
       "exposure": 2,
       "exposure_rationale": "La recolección manual de frutas y hortalizas, la poda y las labores forestales se realizan en terrenos irregulares. La automatización de cosecha avanza pero lentamente para cultivos delicados.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Peones de agricultura, construcción, industria y transporte"
     },
     {
       "title": "Peones de la construcción y de la minería",
@@ -836,7 +887,8 @@
       "education_level": 2,
       "exposure": 1,
       "exposure_rationale": "Trabajo físico pesado en entornos cambiantes y peligrosos. Cargar materiales, excavar, demoler — tareas que requieren adaptabilidad humana en condiciones impredecibles.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Peones de agricultura, construcción, industria y transporte"
     },
     {
       "title": "Peones de las industrias manufactureras",
@@ -852,7 +904,8 @@
       "education_level": 2,
       "exposure": 3,
       "exposure_rationale": "Las tareas repetitivas de fábrica (empaquetado, clasificación, carga) son las más automatizables entre las ocupaciones elementales. La robótica industrial y la logística automatizada avanzan.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Peones de agricultura, construcción, industria y transporte"
     },
     {
       "title": "Peones del transporte, descargadores y reponedores",
@@ -868,7 +921,8 @@
       "education_level": 2,
       "exposure": 3,
       "exposure_rationale": "La automatización de almacenes (estilo Amazon) con robots de picking y clasificación avanza rápidamente. La reposición en tienda y la descarga manual en puntos finales siguen siendo humanas.",
-      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla"
+      "url": "https://www.ine.es/jaxiT3/Datos.htm?t=65967#!tabs-tabla",
+      "pay_group": "Peones de agricultura, construcción, industria y transporte"
     }
   ]
 }
