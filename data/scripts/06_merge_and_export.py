@@ -20,7 +20,7 @@ import pandas as pd
 
 # Importar configuración
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import RAW_DIR, OUTPUT_DIR, CNO_CATEGORIES, EDUCATION_LEVELS
+from config import RAW_DIR, OUTPUT_DIR, CNO_CATEGORIES, EDUCATION_LEVELS, OUTLOOK_THRESHOLDS
 
 CNO11_PATH = Path(__file__).resolve().parent / "cno11_mapping.json"
 OUTPUT_FILE = OUTPUT_DIR / "data.json"
@@ -282,7 +282,6 @@ def main():
             outlook_pct = 0.0
 
         # Clasificar outlook
-        from config import OUTLOOK_THRESHOLDS
         outlook_desc = "Estable"
         for desc, (lower, upper) in OUTLOOK_THRESHOLDS.items():
             if lower <= outlook_pct < upper:
@@ -300,9 +299,9 @@ def main():
             "outlook": round(outlook_pct, 2),
             "outlook_desc": outlook_desc,
             "education": edu["label"],
-            "education_level": int(edu["level"]),
-            "exposure": int(ai["score"]),
-            "exposure_rationale": ai["rationale"],
+            "education_level": int(edu["level"]) if pd.notna(edu["level"]) else 3,
+            "exposure": int(ai["score"]) if pd.notna(ai["score"]) else 5,
+            "exposure_rationale": ai["rationale"] if pd.notna(ai.get("rationale", "")) else "Sin datos específicos.",
             "url": build_ine_url(code),
         })
 

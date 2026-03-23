@@ -228,9 +228,11 @@ def main():
     results = None
     api_key = os.environ.get("ANTHROPIC_API_KEY")
 
-    if api_key or args.use_api:
+    if api_key and (args.use_api or not OUTPUT_FILE.exists()):
         print("  [INFO] Intentando usar API de Anthropic...")
         results = score_with_anthropic(occupations)
+    elif args.use_api and not api_key:
+        print("  [AVISO] --use-api especificado pero ANTHROPIC_API_KEY no está configurada.")
 
     if results is None:
         print("  [INFO] Usando puntuaciones por defecto.")
